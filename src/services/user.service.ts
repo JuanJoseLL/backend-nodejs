@@ -1,5 +1,5 @@
 import UserModel, {UserInput, UserDocument} from '../models/user.models';
-
+import jwt from "jsonwebtoken"
 class UserService {
   public async createUser(user: UserInput): Promise<UserDocument> {
     try{
@@ -20,6 +20,23 @@ class UserService {
 
     }catch(err){
         throw  err;
+    }
+  }
+
+  public async findByEmail(email: string): Promise<UserDocument | null>{
+    try{
+      const user = await UserModel.findOne({email: email})
+      return user
+    }catch(error){
+      throw error
+    }
+  }
+
+  public generateToken(user: UserDocument): string{
+    try{
+      return jwt.sign({user_id: user.id, email: user.email}, process.env.JWT_SECRET || "secret", {expiresIn: "5m"})
+    }catch(error){
+          throw error
     }
   }
    
