@@ -24,4 +24,17 @@ const auth = async (req: Request, res: Response, next: NextFunction) => {
     }
 }
 
+
+export const authorize = (roles: string[]) => {
+    return (req: Request, res: Response, next: NextFunction) => {
+      if (!roles.includes(req.body.loggedUser.role)) {
+        console.log("your mom")
+        return res.status(403).json({ message: "Forbidden" });
+      }
+      console.log("Authorizaado por ser admin")
+      next();
+    };
+  };
+
+
 export default auth
