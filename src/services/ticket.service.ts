@@ -11,9 +11,14 @@ class TicketService {
     }
   }
 
-  // hallar los asistentes a un evento de un organizador especifico
-  public async findAsistantsByOrganizer(): Promise<TicketDocument[] | null>{
-    return null;
+  // hallar todos los ticketes de un evento especifico
+  public async findTicketsByEvent(eventId: string): Promise<TicketDocument[] | null> {
+    try {
+      const tickets = await TicketModel.find({event: eventId})
+      return tickets;
+    } catch(err) {
+      throw err;
+    }
   }
 
   // encontramos todos los tickets
