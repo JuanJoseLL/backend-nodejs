@@ -9,7 +9,7 @@ export interface TicketInput{
     quantity: number;
 }
 
-export interface TicketDocument extends mongoose.Document, TicketInput{
+export interface TicketDocument extends mongoose.Document, TicketInput {
     createdAt: Date;
     updatedAt: Date;
     deletedAt: Date;
