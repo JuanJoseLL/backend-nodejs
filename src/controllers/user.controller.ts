@@ -20,8 +20,9 @@ class UserController {
       console.log("Hey")
       console.log("LLEga hasta en encriptado")
       user.password = await bcrypt.hash(user.password, 10);
+      console.log("Sale del encriptado")
       const newUser: UserDocument = await userService.createUser(user);
-      console.log("you")
+      console.log("crea el usuario")
       return res.status(201).json(newUser);
     }catch(err){
       return res.status(500).json(err);

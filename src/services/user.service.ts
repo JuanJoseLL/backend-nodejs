@@ -27,6 +27,7 @@ class UserService {
     try{
       console.log("LLEga al service")
       const user = await UserModel.findOne({email: email})
+      console.log("Sale del service")
       return user
     }catch(error){
       throw error
