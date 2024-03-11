@@ -8,9 +8,10 @@ class UserController {
 
   public async createUser(req: Request, res: Response) {
     try{
+      console.log("llega aquo")
       const UserExist: UserDocument | null = await userService.findByEmail(req.body.email);
      
-
+      console.log("mian")
       if(UserExist){
         return res.status(400).json({message: "User already exists"});
       

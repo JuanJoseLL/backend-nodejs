@@ -25,6 +25,7 @@ class UserService {
 
   public async findByEmail(email: string): Promise<UserDocument | null>{
     try{
+      console.log("LLEga al service")
       const user = await UserModel.findOne({email: email})
       return user
     }catch(error){
