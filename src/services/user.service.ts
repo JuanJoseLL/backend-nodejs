@@ -3,7 +3,7 @@ import jwt from "jsonwebtoken"
 class UserService {
   public async createUser(user: UserInput): Promise<UserDocument> {
     try{
-
+        console.log("Entra a crear usuario")
         const newUser = await UserModel.create(user);
         console.log("service")
         return newUser;
