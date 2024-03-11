@@ -66,7 +66,21 @@ La API soporta las siguientes operaciones:
 - Creación, listado, edición y eliminación de eventos.
 - Inscripción a eventos.
 
-Las rutas específicas y ejemplos de uso se encuentran documentadas en el archivo `Postman_collection.json` incluido en el repositorio.
+Las rutas específicas y ejemplos de uso se encuentran documentadas en el archivo `Postman_collection.json` incluido en el repositorio. Aun así, las rutas disponibles son (todas iniciando con localhost:3001 si está local):
+
+- / | GET
+- /users | GET
+- /login | POST
+- /users | POST
+- /events/:user | GET
+- /events | POST
+- /events/date/:date | GET
+- /events/location/:location | GET
+- /events/:title | DELETE
+- /events/:title | PUT
+- /tickets | POST
+- /tickets/:user | GET
+- /tickets/assistants/:user | GET 
 
 ## Desafíos y Elementos Pendientes
 
