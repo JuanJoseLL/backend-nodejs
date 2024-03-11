@@ -1,9 +1,8 @@
 {
     "info": {
-      "name": "Gestión de Eventos API",
+      "name": "backend-nodejs",
       "_postman_id": "unique-id",
-      "description": "Colección de solicitudes para probar la API de gestión de eventos.",
-      "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+      "description": "Colección de solicitudes para probar el proyecto.",
     },
     "item": [
       {
