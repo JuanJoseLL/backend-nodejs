@@ -8,9 +8,16 @@ class UserController {
 
   public async createUser(req: Request, res: Response) {
     try{
-      //const UserExist: UserDocument = await userService.findUserByEmail(req.body.email);
+      const UserExist: UserDocument | null = await userService.findByEmail(req.body.email);
+     
+
+      if(UserExist){
+        return res.status(400).json({message: "User already exists"});
+      
+      }
       const user: UserInput = req.body;
       console.log("Hey")
+      console.log("LLEga hasta en encriptado")
       user.password = await bcrypt.hash(user.password, 10);
       const newUser: UserDocument = await userService.createUser(user);
       console.log("you")
