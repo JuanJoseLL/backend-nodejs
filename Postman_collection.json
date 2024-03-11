@@ -11,8 +11,8 @@
           "method": "POST",
           "header": [],
           "url": {
-            "raw": "{{url}}/users",
-            "host": ["{{url}}"],
+            "raw": "https://backend-nodejs-api-2.vercel.app/users",
+            "host": ["{{https://backend-nodejs-api-2.vercel.app/}}"],
             "path": ["users"]
           },
           "body": {
@@ -32,8 +32,8 @@
           "method": "POST",
           "header": [],
           "url": {
-            "raw": "{{url}}/login",
-            "host": ["{{url}}"],
+            "raw": "{{https://backend-nodejs-api-2.vercel.app/}}/login",
+            "host": ["{{https://backend-nodejs-api-2.vercel.app/}}"],
             "path": ["login"]
           },
           "body": {
@@ -58,8 +58,8 @@
             }
           ],
           "url": {
-            "raw": "{{url}}/events",
-            "host": ["{{url}}"],
+            "raw": "{{https://backend-nodejs-api-2.vercel.app/}}/events",
+            "host": ["{{https://backend-nodejs-api-2.vercel.app/}}"],
             "path": ["events"]
           },
           "body": {
