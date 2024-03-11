@@ -37,13 +37,14 @@ class UserController {
 
       if(!userExist){
         return res.status(401).json({message: "User not authorized"})
-
       }
 
       const isMatch = await bcrypt.compare(req.body.password, userExist.password)
 
-      if(!isMatch){
+      if(isMatch){
         return res.status(200).json(userService.generateToken(userExist))
+      } else {
+        return res.status(400).json({message: "Incorrect password"})
       }
     }catch(error){
       return res.status(500).json(error)

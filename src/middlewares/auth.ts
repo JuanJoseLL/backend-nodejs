@@ -28,14 +28,15 @@ const auth = async (req: Request, res: Response, next: NextFunction) => {
     }
 }
 
-
+// verifica si el usuario tiene alguno de los roles que le pasamos
+// por parámetro, así autoriza o no autoriza
 export const authorize = (roles: string[]) => {
     return (req: Request, res: Response, next: NextFunction) => {
       
       if (!roles.includes(req.body.loggedUser.role)) {
         return res.status(403).json({ message: "Forbidden" });
       } else {
-        console.log("Authorized. Admin role")
+        console.log(`Authorized. ${req.body.loggedUser.role} role`)
         next();
       }
     };
