@@ -40,14 +40,18 @@ git clone https://github.com/your-username/event-management-api.git
 
 
 2. Instala las dependencias:
-
-cd event-management-api
+cd backend-nodejs
 npm install
 
 
-3. Ejecuta el servidor:
+3. Configura las variables de entorno creando un archivo `.env` en la raíz del proyecto y añade las siguientes variables:
+PORT=3001
+MONGO_URI=ConexionAMongoDB
+JWT_SECRET=SecretoParaJWT
 
-npm run start
+5. Ejecuta el servidor:
+
+npm run dev
 
 
 ## Documentación de la API
