@@ -5,7 +5,6 @@ import { db } from "./config/db"
 
 import routes from "./routes"
 
-import userController from "./controllers/user.controller"
 
 
 const app: Express = express()

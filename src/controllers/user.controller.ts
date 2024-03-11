@@ -10,8 +10,10 @@ class UserController {
     try{
       //const UserExist: UserDocument = await userService.findUserByEmail(req.body.email);
       const user: UserInput = req.body;
+      console.log("Hey")
       user.password = await bcrypt.hash(user.password, 10);
       const newUser: UserDocument = await userService.createUser(user);
+      console.log("you")
       return res.status(201).json(newUser);
     }catch(err){
       return res.status(500).json(err);

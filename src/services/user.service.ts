@@ -5,7 +5,7 @@ class UserService {
     try{
 
         const newUser = await UserModel.create(user);
-        
+        console.log("service")
         return newUser;
     }catch(err){
       throw err;
