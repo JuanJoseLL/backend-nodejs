@@ -9,6 +9,7 @@ import { authorize } from '../middlewares/auth';
 
 
 const routes = ( app: Express ) => {
+    app.get("/", userController.getLandingPage)
     app.get("/users", auth, authorize(["admin"]), userController.getUsers)
     app.post('/login', userController.login)
     app.post("/users", auth, validateSchema(userSchema), userController.createUser)

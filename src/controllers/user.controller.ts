@@ -12,9 +12,9 @@ class UserController {
       const user: UserInput = req.body;
       user.password = await bcrypt.hash(user.password, 10);
       const newUser: UserDocument = await userService.createUser(user);
-      res.status(201).json(newUser);
+      return res.status(201).json(newUser);
     }catch(err){
-      res.status(500).json(err);
+      return res.status(500).json(err);
     }
   }
 
@@ -24,9 +24,9 @@ class UserController {
 
       const users = await userService.findAll();
 
-      res.json(users)
+      return res.json(users)
     }catch(err){
-      res.status(500).json(err)
+      return res.status(500).json(err)
     }
   }
 
@@ -50,6 +50,10 @@ class UserController {
     }
   }
 
+
+  public async getLandingPage(req: Request, res: Response) {
+    return res.json({message: 'Please LogIn'})
+  }
 }
 
 export default new UserController();
